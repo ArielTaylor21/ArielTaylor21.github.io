@@ -1,23 +1,24 @@
 html,
 /* Style the header */
 .header {
-  background-color: #f1f1f1;
+  background-color: #ee82ee;
   padding: 20px;
   text-align: center;
 }
 
+h1 {
+   text-shadow: 0 1px 0 black, 0 -1px 0 black, 1px 0 0 black, -1px 0 0 black;
+   color: white;
+}
+
 body {
-  background-color: #333300;
+  background-color: #6a5acd;
  color: #3d9d84;
 }
-h1 {
- color: #ffcec7;
- text-align: center;
- font: italic 200% fantasy;
-}
+
 p {
  background-color: #ffcec7;
- color: #333300;
+ color: #6a5acd;
  text-align: right;
  border: 3px groove #FFFF33;
 }
