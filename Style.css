@@ -1,30 +1,5 @@
 html,
 /* Style the header */
-.header {
-  background-color: #ee82ee;
-  padding: 20px;
-  text-align: center;
-}
-
-h1 {
-   text-align: center;
-   text-shadow: 0 1px 0 black, 0 -1px 0 black, 1px 0 0 black, -1px 0 0 black;
-   color: white;
-}
-
-body {
-  background-color: #ffcec7;
-  color: #3d9d84;
-  text-align: left;
-}
-
-p {
- font-family: Georgia, "Times New Roman",
-          Times, serif;
- background-color: #ffcec7;
- color: #6a5acd;
-  text-align: left;
-}
 
 /*shadow box*/
 .box:after {
