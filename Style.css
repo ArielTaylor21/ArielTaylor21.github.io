@@ -1,4 +1,11 @@
 html,
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
 body {
   background-color: #333300;
  color: #ffcec7;
@@ -13,4 +20,34 @@ p {
  color: #333300;
  text-align: right;
  border: 3px groove #FFFF33;
+}
+/*shadow box*/
+.box:after {
+   content: '';
+   position: absolute;
+ 
+   z-index: -1; /* hide shadow behind image */
+ 
+   /* The Shadow */
+   -webkit-box-shadow: 1px 1px 3px green, -1px -1px blue;
+   -moz-box-shadow: 1px 1px 3px green,-1px -1px blue;
+   box-shadow: 1px 1px 3px green, -1px -1px blue;          
+ 
+   width: 70%; 
+   left: 15%; /* one half of the remaining 30% (see width above) */
+ 
+   height: 100px;
+   bottom:  0;
+}
+
+
+
+
+</body>
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
 }
