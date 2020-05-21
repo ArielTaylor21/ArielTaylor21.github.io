@@ -34,9 +34,9 @@ p {
   text-align: left;
 }
 
-html { height: 20%; width: 20%; } 
+body, html { height: 25%; width: 25%; } 
 
-         body {
+          {
             display: -moz-box;
             display: -webkit-box;
             display: box;
