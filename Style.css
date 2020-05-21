@@ -35,6 +35,7 @@ p {
 }
 
 html { height: 100%; width: 100%; } 
+
          body {
             display: -moz-box;
             display: -webkit-box;
@@ -119,7 +120,6 @@ html { height: 100%; width: 100%; }
             -moz-transform: rotateY(180deg);
             transform: rotateY(180deg);
          }
-
 h2 {
    text-align: center;
    -webkit-text-stroke: 3px black;
