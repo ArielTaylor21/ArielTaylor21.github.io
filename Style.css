@@ -4,6 +4,16 @@ html,
   padding: 20px;
   text-align: center;
 }
+ul a {
+   -webkit-transition: padding .4s; 
+   -moz-transition: padding .4s;
+   -o-transition: padding .4s;
+   transition: padding .4s;
+}
+ 
+a:hover { 
+   padding-left: 6px;  
+}
 body {
   background-color: #ffcec7;
   color: #3d9d84;
