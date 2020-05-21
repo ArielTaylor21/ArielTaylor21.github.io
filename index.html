@@ -45,3 +45,23 @@
     https://www.registerednursern.com/cool-html-codes-animations-text-effects-marquees-backgrounds/ </a>).
 </p>
 
+<div class="box">
+   <img src="mermaid.jpg" alt="Mermaid" />
+</div>
+.box:after {
+   content: '';
+   position: absolute;
+ 
+   z-index: -1; /* hide shadow behind image */
+ 
+   /* The Shadow */
+   -webkit-box-shadow: 1px 1px 3px green, -1px -1px blue;
+   -moz-box-shadow: 1px 1px 3px green,-1px -1px blue;
+   box-shadow: 1px 1px 3px green, -1px -1px blue;          
+ 
+   width: 70%; 
+   left: 15%; /* one half of the remaining 30% (see width above) */
+ 
+   height: 100px;
+   bottom:  0;
+}
