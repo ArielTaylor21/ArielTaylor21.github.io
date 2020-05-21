@@ -154,6 +154,7 @@ h2 {
        
          }
 p {color: green;}
+p {background-color: #ffcec7;}
 
 p.ex1 {display: none;}
 p.ex2 {display: inline;}
