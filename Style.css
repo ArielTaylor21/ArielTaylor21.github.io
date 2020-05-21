@@ -7,20 +7,23 @@ html,
 }
 
 h1 {
+   text-align: center;
    text-shadow: 0 1px 0 black, 0 -1px 0 black, 1px 0 0 black, -1px 0 0 black;
    color: white;
 }
 
 body {
   background-color: #ffcec7;
- color: #3d9d84;
+  color: #3d9d84;
+  text-align: right;
 }
 
 p {
  background-color: #ffcec7;
  color: #6a5acd;
+  text-align: right;
 }
-</body>
+
 /*shadow box*/
 .box:after {
    content: '';
@@ -39,6 +42,7 @@ p {
    height: 100px;
    bottom:  0;
 }
+
 h2 {
    -webkit-text-stroke: 3px black;
    color: lightblue;
