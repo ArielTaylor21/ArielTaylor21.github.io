@@ -153,6 +153,11 @@ h2 {
       border: 1px solid #666;
        
          }
+body {
+  background-color: #ffcec7;
+  color: #3d9d84;
+  text-align: center;
+  
 p {color: green;}
 p {background-color: #ffcec7;}
 
