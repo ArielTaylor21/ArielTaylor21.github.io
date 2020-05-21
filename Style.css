@@ -34,7 +34,7 @@ p {
   text-align: left;
 }
 
-body, html { height: 25%; width: 25%; } 
+body, html { height: 100%; width: 100%; } 
 
           {
             display: -moz-box;
