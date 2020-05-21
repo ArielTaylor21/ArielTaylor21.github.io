@@ -170,5 +170,8 @@ div.sticky {
   background-color: #cae8ca;
   border: 2px solid #4CAF50;
 }
-
+h3.pos_right {
+  position: relative;
+  left: 50px;
+}
 }
