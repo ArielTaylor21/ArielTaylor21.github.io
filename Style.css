@@ -1,24 +1,30 @@
 html,
-/* Style the header */
-
-/*shadow box*/
-.box:after {
-   content: '';
-   position: absolute;
- 
-   z-index: -1; /* hide shadow behind image */
- 
-   /* The Shadow */
-   -webkit-box-shadow: 1px 1px 3px green, -1px -1px blue;
-   -moz-box-shadow: 1px 1px 3px green,-1px -1px blue;
-   box-shadow: 1px 1px 3px green, -1px -1px blue;          
- 
-   width: 70%; 
-   left: 15%; /* one half of the remaining 30% (see width above) */
- 
-   height: 100px;
-   bottom:  0;
+.header {
+  background-color: #ee82ee;
+  padding: 20px;
+  text-align: center;
 }
+
+h1 {
+   text-align: center;
+   text-shadow: 0 1px 0 black, 0 -1px 0 black, 1px 0 0 black, -1px 0 0 black;
+   color: white;
+}
+
+body {
+  background-color: #ffcec7;
+  color: #3d9d84;
+  text-align: left;
+}
+
+p {
+ font-family: Georgia, "Times New Roman",
+          Times, serif;
+ background-color: #ffcec7;
+ color: #6a5acd;
+  text-align: left;
+}
+
 
 h2 {
    -webkit-text-stroke: 3px black;
