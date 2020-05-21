@@ -153,5 +153,11 @@ h2 {
       border: 1px solid #666;
        
          }
+p {color: green;}
+
+p.ex1 {display: none;}
+p.ex2 {display: inline;}
+p.ex3 {display: block;}
+p.ex4 {display: inline-block;}
 
 }
