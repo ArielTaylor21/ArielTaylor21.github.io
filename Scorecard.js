@@ -13,14 +13,32 @@ elem.children[4].children[1].onclick
 
 // you don't have to define the function before you use it! 
 function add1 (elem) {
-  if(elem.children[2].innerHTML == "-") elem.children[2].innerHTML = "1";
+  if(elem.children[2].innerHTML == "-") elem.children[2].innerHTML = "1" elem.children.innerHTML="-3";
   else {
     let currentScore = elem.children[2].innerHTML;
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore + 1;
+    elem.children[3].innerHTML = currentScore -3;
   }
+  var count =1;
+  var all =0;
+  var par = 0;
+  var score = 0;
+  var over = 0;
+  var curr = documnet.getElementById("1");
+      while (count <= 18){
+        curr = document.getElementById(count);
+        if (curr.children[2].innerHTML == "-"){
 }
-
+        else {
+          all += 1;
+        par = par + Number.parseInt(curr.children[1].innerHTML);
+        score = score + Number.parseInt(curr.children[2].innerHTML);
+        over = over + Number.parseInt(curr.children[3].innerHTML);
+    }
+    count++;
+      }
+  
 function subtract1 (elem) {
   if(elem.children[2].innerHTML == "-") elem.children[2].innerHTML = "-1";
   else {
