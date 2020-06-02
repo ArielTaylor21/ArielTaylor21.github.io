@@ -29,22 +29,22 @@ var x = document.getElementById(num);
   var par = 0;
   var score = 0;
   var over = 0;
-  var currEl = document.getElementById("1");
+  var curr = document.getElementById("1");
   while(count <= 18){
-    currEl = document.getElementById(count);
+    curr = document.getElementById(count);
 
-    if(currEl.children[2].innerHTML == "-"){
+    if(curr.children[2].innerHTML == "-"){
 
     }
     else{
         all += 1;
-        par = par + Number.parseInt(currEl.children[1].innerHTML);
-        score = score + Number.parseInt(currEl.children[2].innerHTML);
-        over = over + Number.parseInt(currEl.children[3].innerHTML);
+        par = par + Number.parseInt(curr.children[1].innerHTML);
+        score = score + Number.parseInt(curr.children[2].innerHTML);
+        over = over + Number.parseInt(curr.children[3].innerHTML);
     }
     count++;
   }
-  var z = document.getElementById("19");
+  var z = document.getElementById("Total");
   z.children[0].innerHTML = all;
   z.children[1].innerHTML = par;
   z.children[2].innerHTML = score;
@@ -55,8 +55,8 @@ var x = document.getElementById(num);
 function subtract1 (num2) {
     var y = document.getElementById(num2)
   if(y.children[2].innerHTML == "-"){
-       y.children[2].innerHTML = "-1";
-        y.children[3].innerHTML = "-5";
+     y.children[2].innerHTML = "-1";
+     y.children[3].innerHTML = "-5";
   }
   else {
     let currentScore = y.children[2].innerHTML;
@@ -69,21 +69,21 @@ function subtract1 (num2) {
   var par2= 0;
   var score2 = 0;
   var over2 = 0;
-  var currEle = document.getElementById("1");
+  var currEl = document.getElementById("1");
   while(count2 <= 18){
-    currEle = document.getElementById(count2);
-    if(currEle.children[2].innerHTML == "-"){
+    currEl = document.getElementById(count2);
+    if(currEl.children[2].innerHTML == "-"){
 
     }
     else{
         all2 += 1;
-        par2 = par2 + Number.parseInt(currEle.children[1].innerHTML);
-        score2 = score2 + Number.parseInt(currEle.children[2].innerHTML);
-        over2 = over2 + Number.parseInt(currEle.children[3].innerHTML);
+        par2 = par2 + Number.parseInt(currEl.children[1].innerHTML);
+        score2 = score2 + Number.parseInt(currEl.children[2].innerHTML);
+        over2 = over2 + Number.parseInt(currEl.children[3].innerHTML);
     }
     count2++;
   }
-  var j = document.getElementById("19");
+  var j = document.getElementById("Total");
   j.children[0].innerHTML = all2;
   j.children[1].innerHTML = par2;
   j.children[2].innerHTML = score2;
@@ -96,7 +96,7 @@ var elem = document.getElementById(num3);
 elem.children[2].innerHTML = "-";
 elem.children[3].innerHTML = "-";
 
-var count3 = 1;
+  var count3 = 1;
   var all3 = 0;
   var par3= 0;
   var score3 = 0;
@@ -115,11 +115,11 @@ var count3 = 1;
     }
     count3++;
   }
-  var o = document.getElementById("19");
-  o.children[0].innerHTML = all3;
-  o.children[1].innerHTML = par3;
-  o.children[2].innerHTML = score3;
-  o.children[3].innerHTML = over3;
+  var t = document.getElementById("Total");
+  t.children[0].innerHTML = all3;
+  t.children[1].innerHTML = par3;
+  t.children[2].innerHTML = score3;
+  t.children[3].innerHTML = over3;
 }
 /* your mission: 
 1. make all the + buttons add 1 to the proper hole. 
