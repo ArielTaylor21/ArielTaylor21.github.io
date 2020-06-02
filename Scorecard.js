@@ -13,8 +13,9 @@ elem.children[4].children[1].onclick
 
 // you don't have to define the function before you use it! 
 function add1 (elem) {
-  if(elem.children[2].innerHTML == "-") elem.children[2].innerHTML = "1" elem.children.innerHTML="-3";
-  else {
+
+  if(elem.children[2].innerHTML == "-") elem.children[2].innerHTML = "1" elem.children[3].innerHTML= "-3";
+} else {
     let currentScore = elem.children[2].innerHTML;
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore + 1;
@@ -38,13 +39,62 @@ function add1 (elem) {
     }
     count++;
       }
+Total = document.getElementById("");
+  Total.children[0].innerHTML = all;
+  Total.children[1].innerHTML = par;
+  Total.children[2].innerHTML = score;
+  Total.children[3].innerHTML = over;
   
 function subtract1 (elem) {
-  if(elem.children[2].innerHTML == "-") elem.children[2].innerHTML = "-1";
-  else {
+  if(elem.children[2].innerHTML == "-") elem.children[2].innerHTML = "-1" elem.childreninnerHTML"-5")
+}else {
     let currentScore = elem.children[2].innerHTML;
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore - 1;
+    elem.children[3].innerHTML = currentScore - 5;
+  }
+  var count2 = 1;
+  var all2 = 0;
+  var par2= 0;
+  var score2 = 0;
+  var over2 = 0;
+  var currEle = document.getElementById("1");
+  while(count2 <= 18){
+    curr = document.getElementById(count2);
+    if(curr.children[2].innerHTML == "-"){
+
+    }
+    else{
+        all2 += 1;
+        par2 = par2 + Number.parseInt(curr.children[1].innerHTML);
+        score2 = score2 + Number.parseInt(curr.children[2].innerHTML);
+        over2 = over2 + Number.parseInt(curr.children[3].innerHTML);
+    }
+    count2++;
+  }
+  function clearHole (elem) {
+    console.log("invoked clear");
+elem.children[2].innerHTML = "-";
+elem.children[3].innerHTML = "-";
+
+  var count3 = 1;
+  var all3 = 0;
+  var par3= 0;
+  var score3 = 0;
+  var over3 = 0;
+  var curr = document.getElementById("1");
+  while(count3 <= 18){
+    currElem = document.getElementById(count3);
+    if(currElem.children[2].innerHTML == "-"){
+
+    }
+    else{
+        all3 += 1;
+        par3 = par3 + Number.parseInt(curr.children[1].innerHTML);
+        score3 = score3 + Number.parseInt(curr.children[2].innerHTML);
+        over3 = over3 + Number.parseInt(curr.children[3].innerHTML);
+    }
+    count3++;
   }
 }
 
