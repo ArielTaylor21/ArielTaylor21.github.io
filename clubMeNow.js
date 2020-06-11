@@ -159,9 +159,7 @@ function updateStats(shotDistance=0) {
 	// so must pull shotValue from getElementById('clubVal')
 	if(shotDistance==0)
     shotDistance = parseInt(document.getElementById('clubVal').value);
-  if(shotDistance >= 400){
-    alert("Press undo on the next screen if this shot entry was an error, if not consider going pro.");
-  }
+ 
 	if(parseInt(shotDistance) > 0) {
 		// save current clubs array for "Undo" functionality
 		var str = JSON.stringify(clubs);
@@ -228,23 +226,4 @@ function displayClubEntry() {
 function goBack(){
   window.location.href = "clubDistanceList.html"
 }
-function deleteClub(num){
-  num++;
-  console.log(num);
-var tbl = document.getElementById('clubTable');
-tbl.deleteRow(num);
-var clubs = localStorage.getItem("clubs");
-while(num != clubs.length){
-  var x = document.getElementById("clubTable").row[num];
-clubs[num] = clubs[num + 1];
-x.cell5.innerHTML = "<button class='btn btn-success cmn_noPadding cmn_fullHeight' onclick='displayclubDistanceEntryForm(" + num + ");'>&nbsp;&nbsp;+&nbsp;&nbsp;</button>";
-x.cell7.innerHTML = "<button class='btn btn-danger cmn_noPadding cmn_fullHeight' onclick='deleteClub(" + num + ");'>&nbsp;&nbsp;-&nbsp;&nbsp;</button>";
 
-}
-delete clubs[clubs.length - 1];
-var str = JSON.stringify(clubs);
-localStorage.setItem("clubs", str);
-}
-function comingSoon(){
-	alert("club deletion coming soon!");
-}
