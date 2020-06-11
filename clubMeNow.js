@@ -65,8 +65,8 @@ function appendTableRows() {
 		var cell2 = row.insertCell(2); // minDist
 		var cell3 = row.insertCell(3); // maxDist
 		var cell4 = row.insertCell(4); // numOfShots
-    var cell5 = row.insertCell(5); // ("+" button)
-    var cell6 = row.insertCell(6); // clubName
+                var cell5 = row.insertCell(5); // ("+" button)
+                var cell6 = row.insertCell(6); // clubName
 		var cell7 = row.insertCell(7); // ("-" button)
 		// right align only the cells that need to be right aligned
 		cell0.className = "cmn_hidden"; // clubAbbrev
@@ -74,9 +74,9 @@ function appendTableRows() {
 		cell2.className = "cmn_alignRight cmn_hidden"; // minDist
 		cell3.className = "cmn_alignRight cmn_fullHeight"; // maxDist
 		cell4.className = "cmn_alignRight cmn_hidden"; // numOfShots
-    cell5.className = ""; // ("+" button)
-    cell6.className = "cmn_fullHeight";
-    cell7.className = ""; // ("-" button)
+                cell5.className = ""; // ("+" button)
+                cell6.className = "cmn_fullHeight";
+                cell7.className = ""; // ("-" button)
 		// populate HTML table with data from "clubs" array
 		cell0.innerHTML = clubs[i][1]; // clubAbbrev
 		cell1.innerHTML = Math.round(clubs[i][3]); // avgDist
@@ -84,8 +84,8 @@ function appendTableRows() {
 		cell3.innerHTML = Math.round(clubs[i][5]); // maxDist
 		cell4.innerHTML = Math.round(clubs[i][6]); // numOfShots
 		cell5.innerHTML = "<button class='btn btn-success cmn_noPadding cmn_fullHeight' onclick='displayclubDistanceEntryForm(" + i + ");'>&nbsp;&nbsp;+&nbsp;&nbsp;</button>";
-    cell6.innerHTML = clubs[i][2]; // clubName
-    cell7.innerHTML = "<button class='btn btn-danger cmn_noPadding cmn_fullHeight' onclick='comingSoon();' >&nbsp;&nbsp;-&nbsp;&nbsp;</button>";
+                cell6.innerHTML = clubs[i][2]; // clubName
+                cell7.innerHTML = "<button class='btn btn-danger cmn_noPadding cmn_fullHeight' onclick='comingSoon();' >&nbsp;&nbsp;-&nbsp;&nbsp;</button>";
 		// cell6.innerHTML = clubs[i][2] + ", " + clubs[i][7] + "&deg;"; 
 	}
 }
