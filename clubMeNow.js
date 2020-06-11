@@ -15,8 +15,9 @@ function loadClubDistances() {
 	else {
 		resetAllClubDistances();
 		clubs = JSON.parse(localStorage.getItem("clubs"));
-	}
-	return clubs;
+  }
+  return clubs;
+  
 }
 
 // create a new (default) "clubs" array
@@ -42,7 +43,7 @@ function resetAllClubDistances() {
 		[1399, "Sw",  "Sand",     0, 0, 0, 0, 56.0,  80,  60],
 		[1499, "Lw",  "Lob",      0, 0, 0, 0, 60.0,  60,  40],
 		[1599, "Ptr", "Putter",   0, 0, 0, 0, 60.0,   3,   3],
-	];
+  ];
 	// store the array in local storage
 	var str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
@@ -64,16 +65,18 @@ function appendTableRows() {
 		var cell2 = row.insertCell(2); // minDist
 		var cell3 = row.insertCell(3); // maxDist
 		var cell4 = row.insertCell(4); // numOfShots
-		var cell5 = row.insertCell(5); // ("+" button)
-		var cell6 = row.insertCell(6); // clubName
+    var cell5 = row.insertCell(5); // ("+" button)
+    var cell6 = row.insertCell(6); // clubName
+		var cell7 = row.insertCell(7); // ("-" button)
 		// right align only the cells that need to be right aligned
 		cell0.className = "cmn_hidden"; // clubAbbrev
 		cell1.className = "cmn_alignRight cmn_fullHeight"; // avgDist
 		cell2.className = "cmn_alignRight cmn_hidden"; // minDist
 		cell3.className = "cmn_alignRight cmn_fullHeight"; // maxDist
 		cell4.className = "cmn_alignRight cmn_hidden"; // numOfShots
-		cell5.className = ""; // ("+" button)
-		cell6.className = "cmn_fullHeight";
+    cell5.className = ""; // ("+" button)
+    cell6.className = "cmn_fullHeight";
+    cell7.className = ""; // ("-" button)
 		// populate HTML table with data from "clubs" array
 		cell0.innerHTML = clubs[i][1]; // clubAbbrev
 		cell1.innerHTML = Math.round(clubs[i][3]); // avgDist
@@ -81,7 +84,8 @@ function appendTableRows() {
 		cell3.innerHTML = Math.round(clubs[i][5]); // maxDist
 		cell4.innerHTML = Math.round(clubs[i][6]); // numOfShots
 		cell5.innerHTML = "<button class='btn btn-success cmn_noPadding cmn_fullHeight' onclick='displayclubDistanceEntryForm(" + i + ");'>&nbsp;&nbsp;+&nbsp;&nbsp;</button>";
-		cell6.innerHTML = clubs[i][2]; // clubName
+    cell6.innerHTML = clubs[i][2]; // clubName
+    cell7.innerHTML = "<button class='btn btn-danger cmn_noPadding cmn_fullHeight' onclick='comingSoon();' >&nbsp;&nbsp;-&nbsp;&nbsp;</button>";
 		// cell6.innerHTML = clubs[i][2] + ", " + clubs[i][7] + "&deg;"; 
 	}
 }
@@ -94,7 +98,9 @@ function displayclubDistanceEntryForm(c) {
 
 // replace the current "clubs" array with the previous one
 function undoLastShot() {
-        // your code here !
+   var str = localStorage.getItem("clubsUndo");
+   localStorage.setItem("clubs", str);
+   window.location.href = "clubDistanceList.html"; 
 }
 
 // navigate to "About" screen
@@ -152,7 +158,10 @@ function updateStats(shotDistance=0) {
 	// if shotDistance==0 then shotDistance was entered by typed input,
 	// so must pull shotValue from getElementById('clubVal')
 	if(shotDistance==0)
-		shotDistance = parseInt(document.getElementById('clubVal').value);
+    shotDistance = parseInt(document.getElementById('clubVal').value);
+  if(shotDistance >= 400){
+    alert("Press undo on the next screen if this shot entry was an error, if not consider going pro.");
+  }
 	if(parseInt(shotDistance) > 0) {
 		// save current clubs array for "Undo" functionality
 		var str = JSON.stringify(clubs);
@@ -178,6 +187,34 @@ function updateStats(shotDistance=0) {
 		window.location.href = "clubDistanceList.html"; 
 	}
 }
+function addNewClub() {
+  var club = new Array(9);
+var getLength = JSON.parse(localStorage.getItem("clubs"));
+console.log(getLength.length);
+var n = getLength.length;
+if(n > 13){
+  alert("Warning: you are only allowed to carry 14 clubs in your golf bag in match play competition.");
+}
+var name = document.getElementById("clubName").value;
+if(name == ""){
+  name = "Club";
+}
+club[0] = 0;
+club[1] = "New";
+club[2] = name;
+club[3] = 0;
+club[4] = 0;
+club[5] = 0;
+club[6] = 0;
+club[7] = 0;
+club[8] = 0;
+club[9] = 0;
+getLength.push(club);
+console.log(getLength[n]);
+var str = JSON.stringify(getLength);
+localStorage.setItem("clubs", str);
+
+}
 
 // navigate to club distance list screen
 function cancelClub() {
@@ -187,6 +224,7 @@ function cancelClub() {
 // navigate to club distance list screen
 function displayClubEntry() {
 	window.location.href = "clubEntry.html"; 
+}
 function goBack(){
   window.location.href = "clubDistanceList.html"
 }
