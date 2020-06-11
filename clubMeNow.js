@@ -187,3 +187,26 @@ function cancelClub() {
 // navigate to club distance list screen
 function displayClubEntry() {
 	window.location.href = "clubEntry.html"; 
+function goBack(){
+  window.location.href = "clubDistanceList.html"
+}
+function deleteClub(num){
+  num++;
+  console.log(num);
+var tbl = document.getElementById('clubTable');
+tbl.deleteRow(num);
+var clubs = localStorage.getItem("clubs");
+while(num != clubs.length){
+  var x = document.getElementById("clubTable").row[num];
+clubs[num] = clubs[num + 1];
+x.cell5.innerHTML = "<button class='btn btn-success cmn_noPadding cmn_fullHeight' onclick='displayclubDistanceEntryForm(" + num + ");'>&nbsp;&nbsp;+&nbsp;&nbsp;</button>";
+x.cell7.innerHTML = "<button class='btn btn-danger cmn_noPadding cmn_fullHeight' onclick='deleteClub(" + num + ");'>&nbsp;&nbsp;-&nbsp;&nbsp;</button>";
+
+}
+delete clubs[clubs.length - 1];
+var str = JSON.stringify(clubs);
+localStorage.setItem("clubs", str);
+}
+function comingSoon(){
+	alert("club deletion coming soon!");
+}
