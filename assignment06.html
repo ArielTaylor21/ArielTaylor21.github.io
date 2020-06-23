@@ -115,24 +115,23 @@ body {
 					</div>
 
 					<div class="col-lg-6">
-						<div class="form-group">
-						
-							<h2>Payments</h2>
-							
-							<table class="table">
-								<tr>
-									<th>Year</th>
-									<th>Payments</th>
-									<th>Int Amt</th>
-									<th>YE Bal</th>
-								</tr>
-								<tr ng-repeat="x in payments"> <!-- Directive that allows you to loop through. Data binding, binds AngularJS expressions with AngularJS data. i.e. year payment, amount and balance-->
+							<div class="form-group">
+								<h2>Payments</h2>
+								<table class="table">
+									<tr>
+										<th>Year</th>
+										<th>Payments</th>
+										<th>Int Amt</th>
+										<th>YE Bal</th>
+									</tr>
+									<tr ng-repeat="x in payments"> <!-- Directive that allows you to loop through. Data binding, binds AngularJS expressions with AngularJS data. i.e. year payment, amount and balance-->
 										<td>{{ x.year }}</td>
 										<td>{{ x.payment }}</td>
 										<td>{{ x.amt }}</td>
 										<td>{{ x.ye }}</td>
-								
-							</table>
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 
@@ -141,15 +140,15 @@ body {
 			</form>
 
 		</div>
-    
-    <!--- jquery 3.4.1 -->
-		<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-      <!--- Adding angualr,  AngularJS is distributed as a JavaScript file, and can be added to a web page with a script tag -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
 
+		<!--- jquery 3.4.1 -->
+		<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous">
+		</script>
+		<!--- angualr 1.6.9 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!--Bottom of page so it doesnt interfere with DOM -->
 	<script>   
 	// --- global variables ---
 var loans = [
