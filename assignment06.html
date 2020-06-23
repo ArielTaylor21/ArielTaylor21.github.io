@@ -126,7 +126,7 @@ body {
 									<th>Int Amt</th>
 									<th>YE Bal</th>
 								</tr>
-								<tr ng-repeat="x in payments"> <!-- Data binding, binds AngularJS expressions with AngularJS data. i.e. year payment, amount and balance-->
+								<tr ng-repeat="x in payments"> <!-- Directive that allows you to loop through. Data binding, binds AngularJS expressions with AngularJS data. i.e. year payment, amount and balance-->
 										<td>{{ x.year }}</td>
 										<td>{{ x.payment }}</td>
 										<td>{{ x.amt }}</td>
@@ -159,6 +159,9 @@ var loans = [
   { loan_year: 2023, loan_amount: 10000.00, loan_int_rate: 0.0453 },
   { loan_year: 2024, loan_amount: 10000.00, loan_int_rate: 0.0453 }
 ]; 
+   let loanWithInterest = 0;
+   let int = 0;
+   let payments; //global variable
 
 //regular expressions to validate input fields with buttons
 function verifyYEAR(){ //create a function to verify the input of year
@@ -327,36 +330,38 @@ let loadForm = () => { //load form thats save to local storage if isnt saved itl
 
 
   
-}// --- ANGULAR ---
-
-var app = angular.module('myApp', []); //A module is created by using the AngularJS function angular.module. The "myApp" parameter refers to an HTML element in which the application will run.
-app.controller('myCtrl', function($scope) {//scope is the binding part between the HTML (view) and the JavaScript (controller). 
-  $scope.payments =[]; //you pass the $scope object as an argument:
-  $scope.populate = function () { // calls populate function
-   
-    let total = loanWithInterest; // calculate total
-    let iRate = loans[0].loan_int_rate; // calculate interest rate from loan
+}
+// --- ANGULAR ---
+//A module is created by using the AngularJS function angular.module. The "myApp" parameter refers to an HTML element in which the application will run.
+var app = angular.module('myApp', []); // app object created
+app.controller('myCtrl', function($scope) { // controller part of app, directive, scope is the binding part between the HTML (view) and the JavaScript (controller). 
+  $scope.payments =[]; // connects controller with the view (HTML). payments is an array (of objects)
+  $scope.populate = function () { // fill up payment array
+    updateForm(); //updates form and assigns values
+    let total = loanWithInterest;// calculate total
+    let iRate = loans[0].loan_int_rate;
     let r = iRate / 12; // rate of interest per year
     let n = 11; // numper of times per period
     //loan payment formula from
     //https://www.thebalance.com/loan-payment-calculations-315564
-    let pay = 12 * (total / ((((1+r)**(n*12))-1)/(r *(1+r)**(n*12)))); // formula to get interest 
-    for (let i = 0; i < 10; i++) { // for loop too keep track of calculations as increases
+    let pay = 12 * (total / ((((1+r)**(n*12))-1)/(r *(1+r)**(n*12)))); // formula to get computations 
+    for (let i = 0; i < 10; i++) {  // for loop too keep track of calculations as increases through periods
       total -= pay //6500
       let int = total * (iRate); 
-      $scope.payments[i]={
+      $scope.payments[i]={ 
         "year":loans[4].loan_year + i + 1,
         "payment": toMoney(pay), //toMoney(6500),
         "amt": toMoney(int),
-        "bal": toMoney(total += int)
+        "ye": toMoney(total += int)
       }
     }
-    $scope.payments[10] = {
+    $scope.payments[10] = { // store all the values from 0 to 9
       "year": loans[4].loan_year + 11,
       "payment": toMoney(total),
       "amt": toMoney(0),
       "ye":toMoney(0)
     }
+    payments = $scope.payments; // shows you all the variables in payments
   }
 });
     </script>
